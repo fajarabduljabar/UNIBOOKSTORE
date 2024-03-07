@@ -79,7 +79,7 @@
                                                                 <a href="#" class="btn icon btn-warning">
                                                                     <i class="fa fa-pencil"></i>
                                                                 </a>
-                                                                <form action="#" method="POST">
+                                                                <form action="{{ route('buku.destroy', $buku->id) }}" method="POST">
                                                                     @method('DELETE')
                                                                     @csrf
                                                                     <button class="btn icon btn-danger" type="submit"
@@ -94,7 +94,9 @@
                                             </tbody>
 
                                         </table>
+                                
                                     </div>
+                                    
                                 </div>
                             </div>
                         </div>

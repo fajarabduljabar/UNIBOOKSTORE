@@ -38,40 +38,40 @@
                             <div class="card-content">
                                 <div class="card-body">
                                     {{-- enctype="multi platform ngirim data harus ada ini" --}}
-                                    <form action="{{ url('buku') }}" enctype="multipart/form-data" method="post">
+                                    <form action="{{url('buku')}}" enctype="multipart/form-data" method="post">
                                         @csrf
                                         <div class="form-group">
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <label for="basicInput">Kode</label>
-                                                    <input type="text" value="{{ old('judul') }}" name="judul"
-                                                        class="form-control mb-2 @error('judul') is-invalid @enderror"
+                                                    <input type="text" value="{{ old('kode') }}" name="kode"
+                                                        class="form-control mb-2 @error('kode') is-invalid @enderror"
                                                         id="basicInput" placeholder="  ">
-                                                    @error('judul')
+                                                    @error('kode')
                                                         <p class="text-danger">{{ $message }}</p>
                                                     @enderror
                                                     <label for="basicInput">Kategori</label>
-                                                    <input type="text" value="{{ old('penulis') }}" name="penulis"
-                                                        class="form-control mb-2 @error('penulis') is-invalid @enderror"
+                                                    <input type="text" value="{{ old('kategori') }}" name="kategori"
+                                                        class="form-control mb-2 @error('kategori') is-invalid @enderror"
                                                         id="basicInput" placeholder="  ">
-                                                    @error('penulis')
+                                                    @error('kategori')
                                                         <p class="text-danger">{{ $message }}</p>
                                                     @enderror
                                                 </div>
                                                 <div class="col-md-6">
                                                     <label for="basicInput">Nama Buku</label>
-                                                    <input type="text" value="{{ old('penulis') }}" name="penulis"
-                                                        class="form-control mb-2 @error('penulis') is-invalid @enderror"
+                                                    <input type="text" value="{{ old('nama_buku') }}" name="nama_buku"
+                                                        class="form-control mb-2 @error('nama_buku') is-invalid @enderror"
                                                         id="basicInput" placeholder="  ">
-                                                    @error('penulis')
+                                                    @error('nama_buku')
                                                         <p class="text-danger">{{ $message }}</p>
                                                     @enderror
                                                     <div class="mb-3">
                                                         <label for="basicInput">Harga</label>
-                                                        <input type="text" value="{{ old('penulis') }}" name="penulis"
-                                                            class="form-control mb-2 @error('penulis') is-invalid @enderror"
+                                                        <input type="text" value="{{ old('harga') }}" name="harga"
+                                                            class="form-control mb-2 @error('harga') is-invalid @enderror"
                                                             id="basicInput" placeholder="  ">
-                                                        @error('penulis')
+                                                        @error('harga')
                                                             <p class="text-danger">{{ $message }}</p>
                                                         @enderror
                                                     </div>
@@ -80,23 +80,23 @@
                                             <div class="row">
                                            <div class="col-md-6">
                                             <label for="basicInput">Stok</label>
-                                            <input type="text" value="{{ old('penulis') }}" name="penulis"
-                                                class="form-control mb-2 @error('penulis') is-invalid @enderror"
+                                            <input type="text" value="{{ old('stok') }}" name="stok"
+                                                class="form-control mb-2 @error('stok') is-invalid @enderror"
                                                 id="basicInput" placeholder="  ">
-                                            @error('penulis')
+                                            @error('stok')
                                                 <p class="text-danger">{{ $message }}</p>
                                             @enderror
                                            </div>
                                            <div class="col-md-6">
                                             <label for="basicInput">Penerbit</label>
-                                                    <select name="kategori" id="" class="form-select">
+                                                    <select name="penerbit" id="" class="form-select">
                                                         <option hidden></option>
                                                         @foreach ($penerbit as $item)
                                                             <option value="{{ $item['id'] }}">{{ $item['nama'] }}
                                                             </option>
                                                         @endforeach
                                                     </select>
-                                                      @error('kategori')
+                                                      @error('penerbit')
                                                             <p class="text-danger">{{ $message }}</p>
                                                         @enderror
                                            </div>
